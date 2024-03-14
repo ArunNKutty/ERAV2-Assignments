@@ -17,8 +17,8 @@ import torch.nn.functional as F
     Reduced the dropout to a minimal value
     Results:
         Parameters: 7.4k
-        Best Train Accuracy: 99.07
-        Best Test Accuracy: 99.45 (10th epoch)
+        Best Train Accuracy: 98.97
+        Best Test Accuracy: 99.51 (10th epoch)
     Analysis:
         The model is underfitting now
         The test accuracy is also up, which means our test data had few images that had transformation difference w.r.t. train dataset
