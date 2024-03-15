@@ -34,6 +34,14 @@ So in summary, this model takes input images, processes them through a series of
 
 # Trial 3
 
+In trial 3 we achieve 99.4% accuracy with a parameter size of less than 8k by:
+
+reducing the channel size
+drop out
+regularisation
+image augmentation
+GAP
+
 The overall architecture consists of:
 
 Two convolutional blocks with BatchNorm and Dropout layers to extract spatial features from the input while regularizing the model. The convolutions reduce spatial dimensions while increasing channels.
