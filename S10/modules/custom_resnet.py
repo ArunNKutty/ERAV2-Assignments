@@ -6,6 +6,8 @@ import torchinfo
 
 
 ############# Assignment 10 Model #############
+
+# This is for Assignment 10
 class CustomResNet(nn.Module):
     """This defines the structure of the NN."""
 
