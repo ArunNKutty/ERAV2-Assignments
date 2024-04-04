@@ -53,20 +53,21 @@ def apply_cifar_image_transformations(mean,std,cutout_size):
             A.RandomCrop(32, 32),
             # FlipLR
             A.HorizontalFlip(),
-            A.Cutout(num_holes=1, max_h_size=cutout_size, max_w_size=cutout_size, fill_value=list(mean), always_apply=True, p=0.50),
+            # A.Cutout(num_holes=1, max_h_size=cutout_size, max_w_size=cutout_size, fill_value=list(mean), always_apply=True, p=0.50),
             # A.ShiftScaleRotate(
             #     shift_limit=0.1, scale_limit=0.2, rotate_limit=10, p=0.5
             # ),
-            # A.CoarseDropout(
-            #     max_holes=1,
-            #     max_height=cutout_size,
-            #     max_width=cutout_size,
-            #     min_holes=1,
-            #     min_height=cutout_size,
-            #     min_width=cutout_size,
-            #     fill_value=list(mean),
-            #     mask_fill_value=None,
-            # ),
+            A.CoarseDropout(
+                max_holes=1,
+                max_height=cutout_size,
+                max_width=cutout_size,
+                min_holes=1,
+                min_height=cutout_size,
+                min_width=cutout_size,
+                fill_value=list(mean),
+                p=1.0,
+                mask_fill_value=None,
+            ),
             A.Normalize(mean=list(mean), std=list(std)),
             ToTensorV2(),
         ]
